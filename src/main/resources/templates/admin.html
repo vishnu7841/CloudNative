@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>CloudNativeTask</title>
+</head>
+<body style="background-color:#ededed;">
+
+<div align="center">
+	<h1> Project Management </h1>
+	
+		<a href="/newproject"> Add New Project </a>
+		
+	<table border="1" cellpadding="15">
+		<thead>
+			<tr>
+				<th > ID  </th>
+				<th >  Title </th>
+				<th > Category  </th>
+				<th > Amount   </th>
+				<th> Amount Received </th>
+				<th > Description  </th>
+				<th > Period  </th>
+				<th> Actions </th>		
+				
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="project : ${listProjects}"> 
+				<td th:text="${project.id}"> ID </td>
+				<td th:text="${project.title}"> Title </td>
+				<td th:text="${project.category}"> Category </td>
+				<td th:text="${project.amount}"> Amount </td>
+				<td th:text="${project.amountreceived}"> Period </td>
+				<td th:text="${project.description}"> Description </td>
+				<td th:text="${project.period}"> Period </td>
+				
+				<td>
+					<a th:href="@{'/edit/'+${project.id}}">Edit</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<a th:href="@{'/delete/'+${project.id}}">Delete</a> 
+				</td>
+				
+			</tr>
+					
+		</tbody>
+	</table>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>CloudNativeTask</title>
+</head>
+<body style="background-color:#ededed;">
+	<div align="center">
+	<h1> Invest Confirmation </h1>
+	</div>
+	<form action="#" th:action="@{/invest}" th:object="${project}" method="post">
+	<table border="0" cellpadding="15">
+		<tr>
+			<td><h2> Project Details </h2></td>
+		</tr>
+		</br>
+		</br>
+		<tr>
+			<td> Project ID: </td>
+			<td> <input type="text" th:field="*{id}" readonly="readonly"/></td>
+		</tr>
+		<tr>
+			<td> Project Title: </td>
+			<td> <input type="text" th:field="*{title}" readonly="readonly"/></td>
+		</tr>
+		<tr>
+			<td> Category: </td>
+			<td> <input type="text" th:field="*{category}" readonly="readonly"/></td>
+		</tr>
+		<tr>
+			<td> Description:  </td>
+			<td> <input type="text" th:field="*{description}" readonly="readonly"/></td>
+		</tr>
+		<tr>
+			<td> Amount: </td>
+			<td> <input type="number" th:field="*{amount}" readonly="readonly"/></td>
+		</tr>
+		
+		<tr>
+			<td> Period: </td>
+			<td> <input type="number" th:field="*{period}" readonly="readonly"/></td>
+		</tr>
+		</br>
+		</br>
+		<tr>
+			<td><h2> Invest Amount </h2></td>
+		</tr>
+		</br>
+		</br>
+	
+		<tr>
+			<td>  Amount Received: </td>
+			<td> <input type="number" th:field="*{amountreceived}"/></td>
+		</tr>
+		</br>
+		</br>
+		<tr>
+			<td colspan="2"> <button type="submit"> Save </button> </td>
+			
+		</tr>
+		
+		
+	</table>
+</body>
+</html>
