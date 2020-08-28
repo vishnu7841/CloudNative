@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -29,6 +30,7 @@ public class Project {
 	private Long period;
 	private Float amountreceived;
 	
+
 	
 	public Project() {
 	//	super();
@@ -99,8 +101,9 @@ public class Project {
 
 
 	public Float getAmountreceived() {
-		
+	
 		return amountreceived;
+	
 	}
 
 

@@ -126,6 +126,6 @@ public class AuthenticationController {
 	public String saveInvest(@ModelAttribute("project") Project project) {
 		
 		projectService.save(project);
-		return "redirect:/pledge";
+		return "pledge";
 	}
 }
