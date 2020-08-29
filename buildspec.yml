@@ -12,4 +12,4 @@ artifacts:
   files:
     - demo-0.0.1-SNAPSHOT.war
     - .ebextensions/**/*
-  base-directory: 'target/demo-0.0.1-SNAPSHOT'
+  base-directory: 'target/demo-0.0.1-SNAPSHOT.war'
