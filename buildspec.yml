@@ -2,12 +2,20 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      java: corretto11
+    commands:
+      - echo Nothing to do in the install phase...
+  pre_build:
+    commands:
+      - echo Nothing to do in the pre_build phase...
+  build:
+    commands:
+      - echo Build started on `date`
+      - mvn clean install
   post_build:
     commands:
-      - mvn package
-      - mv target/demo-0.0.1-SNAPSHOT.war demo-0.0.1-SNAPSHOT.war
+      - echo Build completed on `date`
+      - mv target/demo-0.0.1-SNAPSHOT.war ROOT.war
 artifacts:
   files:
-    - demo-0.0.1-SNAPSHOT.war
+    - ROOT.war
+    
