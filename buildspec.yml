@@ -1,20 +1,15 @@
 version: 0.2
+
 phases:
   install:
     runtime-versions:
-      java: corretto8
-  pre_build:
-    commands:
-    - echo In the pre_build phase...
-  build:
-    commands:
-    - echo Build started on `date`
+      java: corretto11
   post_build:
     commands:
-    - echo Build completed on `date`
-    - mvn package
-    - mv target/demo-0.0.1-SNAPSHOT.war demo-0.0.1-SNAPSHOT.war
+      - mvn package
+      - mv target/demo-0.0.1-SNAPSHOT.war demo-0.0.1-SNAPSHOT.war
 artifacts:
   files:
-  - demo-0.0.1-SNAPSHOT.war
-  - .ebextensions/**/*
+    - demo-0.0.1-SNAPSHOT.war
+    - .ebextensions/**/*
+  base-directory: 'target/demo-0.0.1-SNAPSHOT'
