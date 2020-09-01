@@ -21,7 +21,7 @@ import javax.persistence.Table;
 public class Project {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String title;
 	private String category;
@@ -30,12 +30,12 @@ public class Project {
 	private Long period;
 	private Float amountreceived;
 	
-
+	
 	
 	public Project() {
 	//	super();
 		
-	
+
 		// TODO Auto-generated constructor stub
 	}
 
@@ -101,15 +101,29 @@ public class Project {
 
 
 	public Float getAmountreceived() {
-	
+		
 		return amountreceived;
+		
 	
 	}
 
 
 	public void setAmountreceived(Float amountreceived) {
+		if(amountreceived<=this.amount)
+		{
 		this.amountreceived = amountreceived;
+		}
+		else 
+		{
+			this.amountreceived = this.amount;
+		}
 	}
+
+
+
+
+
+	
 
 
 }
